@@ -1,18 +1,25 @@
-require 'sinatra'
+require 'sinatra/base'
 
-get '/hello' do
-  'Hello there!'
-end
+class Birthday < Sinatra::Base
+  enable :sessions
 
-get '/name' do
-  "What's your name?"
-  erb(:index)
-end
+  get '/' do
+    erb :index
+  end
 
-get '/day' do
-  erb(:index)
-end
+  post '/info' do
+    session[:name] = params[:name]
+    session[:day] = params[:day]
+    session[:month] = params[:month]
+    redirect '/result'
+  end
 
-get'/month' do
-  erb(:index)
+  get '/result' do
+    @name = session[:name]
+    @day = session[:day]
+    @month = session[:month]
+    erb :result
+  end
+
+  run! if app_file == $0
 end

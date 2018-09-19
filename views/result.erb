@@ -1,0 +1,3 @@
+<% if @day.to_s == Time.now.strftime('%d') && @month.capitalize! == Time.now.strftime('%B') %>
+  <h1 align='center'> Happy birthday <%= @name %>! </h1>
+<% end %>

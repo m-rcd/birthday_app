@@ -1,34 +1,36 @@
 <body bgcolor="skyblue">
+
 <h1 align='center'> Hello there!</h1>
-<h2 align= 'center'> What's your name?</h2>
 
-<form align='center' action='/name' method='post'>
+
+<form align='center' action='/info' method='post'>
+  <h2 align= 'center'> What's your name?</h2>
   <input  type='text' name='name'>
-</form>
 
-<h2 align='center'> When's your birthday?</h2>
-<form align='center' for='day'>Day:
-  <input  type='text' name='day' maxlength='3' size='3'>
-</form>
 
-<form align='center' for='month'>Month:
-  <select>
-    <option value='select'>Select</option>
-    <option value='january'>January</option>
-    <option value='february'>February</option>
-    <option value='march'>march</option>
-    <option value='april'>April</option>
-    <option value='may'>May</option>
-    <option value='june'>June</option>
-    <option value='july'>July</option>
-    <option value='august'>August</option>\
-    <option value='september'>September</option>
-    <option value='october'>October</option>
-    <option value='november'>November</option>
-    <option value='december'>December</option>
-  </select>
-</form>
 
-<div align='center'>
-  <button type="button">GO!</button>
-</div>
+  <h2 align='center'> When's your birthday?</h2>
+  <label for='day'>
+    Day:
+    <input  type='number' name='day' maxlength='3' size='3'>
+  </label>
+  <label >
+    Month:
+    <select name='month'>
+      <option value='select'>Select</option>
+      <option value='january'>January</option>
+      <option value='february'>February</option>
+      <option value='march'>march</option>
+      <option value='april'>April</option>
+      <option value='may'>May</option>
+      <option value='june'>June</option>
+      <option value='july'>July</option>
+      <option value='august'>August</option>\
+      <option value='september'>September</option>
+      <option value='october'>October</option>
+      <option value='november'>November</option>
+      <option value='december'>December</option>
+    </select>
+  </label>
+  <input type="submit" value='submit'>
+</form>
