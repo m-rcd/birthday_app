@@ -1,7 +1,11 @@
 
 
 <% if @result == 0 %>
- <h1 align='center'> Happy birthday <%= @name.capitalize %>! </h1>
- <% else %>
- <h1 align='center'> Your birthday is in <%= @result %>, <%= @name.capitalize %>! </h1>
+ <div style="text-align: center;"><IMG SRC='https://www.simplemost.com/wp-content/uploads/2017/12/birthday-1-750x500.jpeg' ALT="image"></div>
+
+  <font size="7" color='blue'> <h1 align='center'> Happy birthday <%= @name.capitalize %>! </h1></font>
+<% else %>
+<div style="text-align: center;"><IMG SRC='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUX-HT8Uyp-zyK7QL2kgrmzJM5ByA_kO7HKONACnMx1MSh1BHvSA' ALT="image"></div>
+
+  <font size="5" color='blue'><h1 align='center'> Your birthday is in <%= @result %> days, <%= @name.capitalize %>! </h1>
 <% end %>
