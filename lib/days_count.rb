@@ -1,7 +1,6 @@
 
 class Counter
   def count(day, month)
-    p month
     birthday = month.capitalize! + ' ' + day
     bday = DateTime.parse(birthday)
     today = Date.today
