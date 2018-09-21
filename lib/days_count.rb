@@ -1,9 +1,9 @@
 class Counter
   def count(day, month)
-    birthday = month.capitalize! + ' ' + day
-    bday = DateTime.parse(birthday)
+    date = month.capitalize! + ' ' + day
+    birthday = Date.parse(date)
     today = Date.today
-    bday < today ? next_birthday = bday + 365 : next_birthday = bday
+    birthday < today ? next_birthday = birthday + 365 : next_birthday = birthday
     days_until_birthday = (next_birthday - today).to_i
   end
 end
