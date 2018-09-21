@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/days_count'
+
 class Birthday < Sinatra::Base
   enable :sessions
 
@@ -20,10 +21,8 @@ class Birthday < Sinatra::Base
     @name = session[:name]
     @day = session[:day]
     @month = session[:month]
-
     @result = counter.count(@day, @month)
     erb :result
-
   end
 
   run! if app_file == $0

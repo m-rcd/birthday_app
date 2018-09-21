@@ -1,2 +1,2 @@
-require_relative "./birthday_app"
+require_relative './birthday_app'
 run Birthday
