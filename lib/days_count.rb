@@ -1,14 +1,25 @@
 class Counter
+
   def count(day, month)
-    date = month.capitalize! + ' ' + day
-    birthday = Date.parse(date)
     today = Date.today
-    birthday < today ? next_birthday = birthday + 365 : next_birthday = birthday
+
+    date = month.capitalize! + ' ' + day + ' ' + today.year.to_s
+    birthday = Date.parse(date)
+
+    if birthday.day == 29 && birthday.month == 2
+      next_birthday = birthday + (3 * 365) + 367
+    elsif birthday <= today
+      leap_year?(today) ? days = 367 : days = 365
+      next_birthday = birthday + days
+    else
+      next_birthday = birthday
+    end
     (next_birthday - today).to_i
   end
 
-   def leap_year?
-    year = Date.today.year
-    Date.new(year).leap?
+private
+
+   def leap_year?(today)
+    Date.new(today.year).leap?
   end
 end
